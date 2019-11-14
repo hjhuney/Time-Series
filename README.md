@@ -44,3 +44,9 @@ Does data have same statistical properties throughout the time series?
 Most models require stationairty. Can you use transformations and differencing to change data. Used extensively in ARIMA.
 
 To test whether data is stationary, can use Augmented Dickey-Fuller Test. 
+
+## Autocorrelation
+
+Can only be present in ordered data. It is the similiarity between observations based on the time lag between them (i.e. repeating patterns). Trend and seasonality are a product of autocorrelation. 
+
+ACF and PACF plots show autocorrelation. 
