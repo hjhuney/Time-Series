@@ -23,6 +23,27 @@ Other options:
 * "T" for minutes
 * "S" for seconds
 
+## Simple Moving Average (SMA) / Rolling Mean
+
+
+In Pandas, we can use timeseries.rolling().mean()
+
+```
+# Simple moving (rolling) calculations
+# Note: the rolling methods are applicable only on pandas Series and DataFrame objects
+def plot_rolling(timeseries, window):
+    rol_mean = timeseries.rolling(window).mean()
+    rol_std = timeseries.rolling(window).std()
+    
+    fig = plt.figure(figsize = (12, 8))
+    og = plt.plot(timeseries, color = "blue", label = "Original")
+    mean = plt.plot(rol_mean, color = "red", label = "Rolling Mean")
+    std = plt.plot(rol_std, color = "black", label = "Rolling Std")
+    plt.legend(loc = "best")
+    plt.title("Rolling Mean and Standard Deviation (window = "+str(window)+")")
+    plt.show()
+```
+
 
 # Statistical Concepts
 
@@ -50,3 +71,9 @@ To test whether data is stationary, can use Augmented Dickey-Fuller Test.
 Can only be present in ordered data. It is the similiarity between observations based on the time lag between them (i.e. repeating patterns). Trend and seasonality are a product of autocorrelation. 
 
 ACF and PACF plots show autocorrelation. 
+
+## Smoothers
+
+Flattens out data in time series dataset. Very common with stock market pricing data. For instance, the "Simple Moving Average" (SMA) of a stock price over 50 days. You create this smoother by taking observations surrounding your data point and averaging them.
+
+There is also an Expotentially Weighted Moving Average (EWMA) that gives more weight to latest observations. 
