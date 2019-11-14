@@ -44,6 +44,31 @@ def plot_rolling(timeseries, window):
     plt.show()
 ```
 
+SMA with minimum number of periods. 
+
+```
+# Simple rolling calculation with minimum number of periods
+def plot_rolling2(timeseries, window):
+    rol_mean = timeseries.rolling(window, min_periods = 1).mean()
+    rol_std = timeseries.rolling(window, min_periods = 1).std()
+```
+
+
+## Exponentially Weighted Moving Average (EWMA)
+
+```
+# Exponentially Weighted Moving Average
+# Note: the ewm method is applicable on pandas Series and DataFrame objects only
+def plot_ewma(timeseries, alpha):
+    expw_ma = timeseries.ewm(alpha=alpha).mean()
+
+    fig = plt.figure(figsize = (12, 8))
+    og_line = plt.plot(timeseries, color = "blue", label = "Original")
+    exwm_line = plt.plot(expw_ma, color = "red", label = "EWMA")
+    plt.legend(loc = "best")
+    plt.title("EWMA (alpha= "+str(alpha)+")")
+    plt.show()
+```
 
 # Statistical Concepts
 
