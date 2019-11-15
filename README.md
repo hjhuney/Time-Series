@@ -120,9 +120,11 @@ Nearly any univariate time series can be modeled with ARIMA. Sometimes exponenti
 
 Y(t) = c + (Phi) * Y(t-1) + e(t)
 
-Y(t) -> Observed value at time point (t)
-c -> constant
-Phi -> coefficient; signified by greek letter Phi
-Y(t-1) -> previous time period
-e -> error term
+* Y(t) -> Observed value at time point (t)
+* c -> constant
+* Phi -> coefficient; signified by greek letter Phi
+* Y(t-1) -> previous time period
+* e -> error term
+
+If we have stationary, we can set middle parameter ("d") to 0. 
 
