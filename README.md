@@ -106,3 +106,23 @@ There is also an Expotentially Weighted Moving Average (EWMA) that gives more we
 
 ## Autoregressive Integrated Moving Average (ARIMA)
 
+ARIMA is also known as Box-Jenkins. ARIMA model has 3 parameters (p,d,q). For seasonsal data, we typically use capital letters. 
+
+p/P -> Autoregressive part
+d/D -> integration, degree of differencing
+q/Q -> moving average
+
+calculating p and q require stationary time series. We can manually do differcing, but typically let ARIMA function do the differcing during the model. 
+
+In Python, statsmodels / TSA / arima_model. Use ARIMA() function. When you fit ARIMA model, you need ACF and PACF plots to fit the model. 
+
+Nearly any univariate time series can be modeled with ARIMA. Sometimes exponential smoothing or seasonal decomposition can be better, though (particularly for seasonal data). 
+
+Y(t) = c + (Phi) * Y(t-1) + e(t)
+
+Y(t) -> Observed value at time point (t)
+c -> constant
+Phi -> coefficient; signified by greek letter Phi
+Y(t-1) -> previous time period
+e -> error term
+
