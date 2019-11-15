@@ -102,3 +102,7 @@ ACF and PACF plots show autocorrelation.
 Flattens out data in time series dataset. Very common with stock market pricing data. For instance, the "Simple Moving Average" (SMA) of a stock price over 50 days. You create this smoother by taking observations surrounding your data point and averaging them.
 
 There is also an Expotentially Weighted Moving Average (EWMA) that gives more weight to latest observations. 
+
+
+## Autoregressive Integrated Moving Average (ARIMA)
+
